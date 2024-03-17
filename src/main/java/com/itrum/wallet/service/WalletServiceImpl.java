@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itrum.wallet.model.Wallet;
 import com.itrum.wallet.repository.WalletRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +40,9 @@ public class WalletServiceImpl implements WalletService {
         return wallet;
     }
 
+
     @Override
+    @Transactional
     public Wallet update(String json) {
         Wallet walletUpdate = jsonParsing(json);
         Wallet wallet = findById(walletUpdate.getId());
