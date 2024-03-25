@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@OptimisticLocking(type = OptimisticLockType.VERSION)
 public class Wallet {
 
     @Id
@@ -29,7 +28,5 @@ public class Wallet {
     @Transient
     private Operation operation;
 
-    /*@Version
-    private Long version;*/
 
 }
