@@ -7,8 +7,8 @@ import com.itrum.wallet.repository.WalletRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
+
 
 
 @Service
@@ -53,5 +53,6 @@ public class WalletServiceImpl implements WalletService {
         walletRepository.save(wallet);
         return wallet;
     }
+
 
 }
