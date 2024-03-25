@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
 
 
 @Entity
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@OptimisticLocking(type = OptimisticLockType.VERSION)
 public class Wallet {
 
     @Id
@@ -27,6 +30,9 @@ public class Wallet {
 
     @Transient
     private Operation operation;
+
+    @Version
+    private Long version;
 
 
 }
